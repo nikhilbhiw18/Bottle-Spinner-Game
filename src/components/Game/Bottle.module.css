@@ -1,0 +1,188 @@
+.bottleContainer {
+  position: relative;
+  width: 120px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: grab;
+}
+
+.bottleContainer:active {
+  cursor: grabbing;
+}
+
+.bottle {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
+}
+
+.cap {
+  width: 30px;
+  height: 15px;
+  background: linear-gradient(90deg, #333 0%, #666 50%, #333 100%);
+  border-radius: 4px 4px 0 0;
+  z-index: 5;
+}
+
+.neck {
+  background: rgba(100, 150, 255, 0.2);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-bottom: none;
+  position: relative;
+}
+
+.shoulder {
+  background: rgba(100, 150, 255, 0.2);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-top: none;
+  border-bottom: none;
+}
+
+.body {
+  background: rgba(100, 150, 255, 0.15);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Shapes Definitions based on Wine Regions */
+.alsace .neck { height: 140px; width: 22px; }
+.alsace .shoulder { width: 80px; height: 100px; border-radius: 90% 90% 0 0; }
+.alsace .body { width: 80px; height: 200px; border-radius: 0 0 10px 10px; }
+
+.bordeaux .neck { height: 90px; width: 25px; }
+.bordeaux .shoulder { width: 95px; height: 30px; border-radius: 15% 15% 0 0; border-top: 2px solid rgba(255,255,255,0.4); }
+.bordeaux .body { width: 95px; height: 240px; border-radius: 0 0 10px 10px; }
+
+.burgundy .neck { height: 100px; width: 25px; }
+.burgundy .shoulder { width: 110px; height: 110px; border-radius: 80% 80% 0 0; }
+.burgundy .body { width: 110px; height: 220px; border-radius: 0 0 20px 20px; }
+
+.champagne .neck { height: 110px; width: 30px; }
+.champagne .shoulder { width: 125px; height: 120px; border-radius: 70% 70% 0 0; }
+.champagne .body { width: 125px; height: 210px; border-radius: 0 0 40px 40px; }
+
+.port .neck { height: 80px; width: 30px; border-radius: 50% 50% 0 0; }
+.port .shoulder { width: 105px; height: 40px; border-radius: 20% 20% 0 0; }
+.port .body { width: 105px; height: 230px; border-radius: 0 0 15px 15px; }
+
+.provence .neck { height: 70px; width: 28px; }
+.provence .shoulder { width: 95px; height: 60px; border-radius: 50% 50% 20% 20%; }
+.provence .body { width: 95px; height: 230px; border-radius: 30% 30% 20% 20%; transform: scaleX(1.1); }
+
+.classic .neck { height: 80px; width: 25px; }
+.classic .shoulder { width: 100px; height: 60px; border-radius: 50% 50% 0 0; }
+.classic .body { width: 100px; height: 200px; border-radius: 0 0 20px 20px; }
+
+/* Shapes Definitions */
+.classic .neck { height: 80px; width: 25px; }
+.classic .shoulder { width: 100px; height: 60px; border-radius: 50% 50% 0 0; }
+.classic .body { width: 100px; height: 200px; border-radius: 0 0 20px 20px; }
+
+.wine .neck { height: 120px; width: 22px; }
+.wine .shoulder { width: 80px; height: 80px; border-radius: 60% 60% 0 0; }
+.wine .body { width: 80px; height: 250px; border-radius: 0 0 10px 10px; }
+
+.soda .neck { height: 60px; width: 30px; }
+.soda .shoulder { width: 110px; height: 40px; border-radius: 40% 40% 0 0; }
+.soda .body { width: 110px; height: 180px; border-radius: 0 0 40% 40%; }
+
+.fancy .neck { height: 40px; width: 35px; }
+.fancy .shoulder { width: 140px; height: 30px; border-radius: 20% 20% 0 0; }
+.fancy .body { width: 140px; height: 120px; border-radius: 0 0 40px 40px; }
+
+.milk .neck { height: 30px; width: 50px; }
+.milk .shoulder { width: 100px; height: 20px; border-radius: 10% 10% 0 0; }
+.milk .body { width: 100px; height: 180px; border-radius: 0 0 15px 15px; }
+
+.water .neck { height: 50px; width: 28px; }
+.water .shoulder { width: 90px; height: 70px; border-radius: 50% 50% 10% 10%; }
+.water .body { width: 90px; height: 220px; border-radius: 10% 10% 30% 30%; }
+
+.champagne .neck { height: 100px; width: 30px; }
+.champagne .shoulder { width: 120px; height: 90px; border-radius: 80% 80% 0 0; }
+.champagne .body { width: 120px; height: 210px; border-radius: 0 0 30px 30px; }
+
+.highlight {
+  position: absolute;
+  top: 0;
+  left: 15%;
+  width: 15%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 100%);
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.spinning .highlight {
+  animation: shine 0.5s infinite linear;
+}
+
+@keyframes shine {
+  0% { transform: translateX(-100%); opacity: 0.3; }
+  50% { transform: translateX(200%); opacity: 0.6; }
+  100% { transform: translateX(500%); opacity: 0.3; }
+}
+
+.reflection {
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  width: 10%;
+  height: 20%;
+  background: rgba(255,255,255,0.3);
+  border-radius: 50%;
+  filter: blur(4px);
+  pointer-events: none;
+}
+
+.spinning .reflection {
+  animation: flicker 0.2s infinite alternate;
+}
+
+@keyframes flicker {
+  from { opacity: 0.3; transform: scale(1); }
+  to { opacity: 0.7; transform: scale(1.1); }
+}
+
+.label {
+  position: absolute;
+  top: 40%;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(255,255,255,0.2);
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(2px);
+}
+
+.labelText {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.6);
+}
+
+.shadow {
+  position: absolute;
+  bottom: -20px;
+  width: 120%;
+  height: 20px;
+  background: radial-gradient(ellipse at center, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 70%);
+  z-index: -1;
+}
