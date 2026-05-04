@@ -3,15 +3,15 @@ import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
 
 export const metadata: Metadata = {
-  title: "Bottle Spinner Game | Realistic 3D Glass Physics & Fun",
-  description: "Experience the ultimate Bottle Spinner Game with realistic glass physics, premium glassmorphism UI, and multiple wine bottle shapes. Play with friends locally and enjoy smooth interactive animations.",
-  keywords: ["bottle spinner", "spin the bottle", "party game", "realistic bottle physics", "online bottle spinner", "glassmorphism game"],
+  title: "Bottle Spinner Game Online | Free Spin The Bottle",
+  description: "Play the ultimate Bottle Spinner Game online for free! Perfect for party games, truth or dare, and having fun with friends. Experience realistic glass physics, premium UI, and interactive animations. Play the best bottle spinner online today.",
+  keywords: ["bottle spinner", "bottle spinner game", "bottle spinner online", "spin the bottle", "party game", "realistic bottle physics", "online bottle spinner", "glassmorphism game"],
   authors: [{ name: "Bottle Spinner Team" }],
   openGraph: {
-    title: "Bottle Spinner - Realistic, Fun, Interactive",
-    description: "The most premium bottle spinning experience on the web.",
+    title: "Bottle Spinner Game Online - Realistic, Fun, Interactive",
+    description: "The most premium bottle spinning experience on the web. Play the bottle spinner game online now!",
     url: "https://bottle-spinner-game.vercel.app",
-    siteName: "Bottle Spinner",
+    siteName: "Bottle Spinner Online",
     images: [
       {
         url: "https://bottle-spinner-game.vercel.app/og-image.png", // You can add a real OG image later
