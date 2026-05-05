@@ -276,12 +276,12 @@
 
 @media (max-width: 600px) {
   .table {
-    width: 350px;
-    height: 350px;
+    width: 280px;
+    height: 280px;
   }
   
   .playerIndicator {
-    transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-180px) rotate(calc(var(--angle) * -1)) !important;
+    transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-140px) rotate(calc(var(--angle) * -1)) !important;
     width: 65px;
     height: 75px;
     gap: 4px;
@@ -302,5 +302,9 @@
   
   .playerName {
     font-size: 0.6rem;
+  }
+
+  .bottleInteraction {
+    transform: scale(0.65);
   }
 }
