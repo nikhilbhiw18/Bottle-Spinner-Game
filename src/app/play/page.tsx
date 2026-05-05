@@ -170,8 +170,8 @@ const PlayPage = () => {
                        key={i} 
                        className={`${styles.playerIndicator} ${winner === name ? styles.winnerIndicator : ''}`}
                        style={{ 
-                         transform: `translate(-50%, -50%) rotate(${angle}deg) translateY(-310px) rotate(${-angle}deg)` 
-                       }}
+                         '--angle': `${angle}deg`,
+                       } as React.CSSProperties}
                      >
                        <div className={styles.playerAvatar}>
                          <Users size={16} />

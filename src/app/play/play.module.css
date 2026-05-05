@@ -170,6 +170,7 @@
   transform-origin: center center;
   transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-310px) rotate(calc(var(--angle) * -1));
 }
 
 .playerIndicator::before {
@@ -280,8 +281,26 @@
   }
   
   .playerIndicator {
-    transform: rotate(0deg) translateY(-150px) !important;
-    padding: 4px 10px;
-    font-size: 0.75rem;
+    transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-180px) rotate(calc(var(--angle) * -1)) !important;
+    width: 65px;
+    height: 75px;
+    gap: 4px;
+    border-radius: 35% 35% 10px 10px;
+  }
+
+  .playerIndicator::before {
+    top: -16px;
+    width: 28px;
+    height: 28px;
+  }
+
+  .playerAvatar {
+    width: 22px;
+    height: 22px;
+    margin-top: -6px;
+  }
+  
+  .playerName {
+    font-size: 0.6rem;
   }
 }
